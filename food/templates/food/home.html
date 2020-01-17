@@ -1,0 +1,22 @@
+{% extends 'food/base.html' %}
+
+{% block body %}
+<body>
+<ul class="list-group">
+    <li class="list-group-item center-text">Meal Plan For The Week!!</li>
+    <br>
+    
+    <li class="list-group-item list-group-item-primary">Monday:     {{mon}}</li>
+    <br>
+    <li class="list-group-item list-group-item-primary">Tuesday:    {{tues}}</li>
+    <br>
+    <li class="list-group-item list-group-item-primary">Wednesday:  {{wed}}</li>
+    <br>
+    <li class="list-group-item list-group-item-primary">Thursday:   {{thurs}}</li>
+    <br>
+    <li class="list-group-item list-group-item-primary">Friday:     {{fri}}</li>
+    <br>
+    <li class="list-group-item list-group-item-primary">Saturday:   {{sat}}</li>
+    <br>
+    <li class="list-group-item list-group-item-primary">Sunday:     {{sun}}</li>
+{% endblock %}
