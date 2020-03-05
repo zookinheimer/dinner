@@ -12,6 +12,33 @@ def home(request):
     htlist = history.objects.all()
     for item in htlist:
         hlist.append(item.name)
+
+    ingreds = []
+    ilist = dinner_list.objects.all()
+    
+    for item in ilist:
+        if item.name == hlist[-7]:
+            ingreds.append(item.ingredients)
+        elif item.name == hlist[-6]:
+            ingreds.append(item.ingredients)
+        elif item.name == hlist[-5]:
+            ingreds.append(item.ingredients)
+        elif item.name == hlist[-4]:
+            ingreds.append(item.ingredients)
+        elif item.name == hlist[-3]:
+            ingreds.append(item.ingredients)
+        elif item.name == hlist[-2]:
+            ingreds.append(item.ingredients)
+        elif item.name == hlist[-1]:
+            ingreds.append(item.ingredients)
+        else:
+            pass
+
+    ingred =[]
+    for item in ingreds:
+        item = item.split(",")
+        ingred.extend(item)
+   
     
     #assign last 7 entries to var for rendering to home page.
     mon = hlist[-7]
@@ -22,7 +49,7 @@ def home(request):
     sat = hlist[-2]
     sun = hlist[-1]
 
-    return render(request, 'food/home.html', {'mon':mon, 'tues':tues, 'wed':wed, 'thurs':thurs, 'fri':fri, 'sat':sat, 'sun':sun})
+    return render(request, 'food/home.html', {'mon':mon, 'tues':tues, 'wed':wed, 'thurs':thurs, 'fri':fri, 'sat':sat, 'sun':sun, 'ingred':ingred})
 
 
 def addreceipe(request):

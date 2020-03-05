@@ -19,4 +19,13 @@
     <li class="list-group-item list-group-item-primary">Saturday:   {{sat}}</li>
     <br>
     <li class="list-group-item list-group-item-primary">Sunday:     {{sun}}</li>
+
+
+    <h2>ingredients</h2>
+    <ul class="list-group"></ul>
+    {% for item in ingred %}
+        <li>{{item}}</li>
+    {% endfor%}
+    </ul>
+
 {% endblock %}
